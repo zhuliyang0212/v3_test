@@ -1,13 +1,16 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useRoute } from 'vue-router'
+let route = useRoute()
 
-defineProps<{ msg: string }>()
+// defineProps<{ msg: string }>()
 
 const count = ref(0)
 </script>
 
 <template>
-  <h1>{{ msg }}</h1>
+<!--  <h1>{{ msg }}</h1>-->
+  <h1>{{ route.params.id }}---------------id</h1>
 
   <div class="card">
     <button type="button" @click="count++">count is {{ count }}</button>
